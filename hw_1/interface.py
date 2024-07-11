@@ -1,80 +1,75 @@
-'''
-import turtle as t
-
-n = int(input())
-k = 100
-screen_size = n * k
-
-t.turtlesize(5, 5)
-t.screensize(screen_size * 2, screen_size * 2)  # размер холста
-#t.setup(screen_size * 4, screen_size * 4)      # размер окна в целом
-t.speed(3)
-
-# #square = t.Turtle()
-# t.pencolor("black")
-# t.fillcolor("black")
-# t.begin_fill()
-# t.circle(50)
-# t.end_fill()
-
-for i in range(n - 1):
-    t.penup()
-    t.goto(0, k + k*i)
-    t.pendown()
-    t.goto(n*k, k + k*i)
-
-    t.penup()
-    t.goto(k + k*i, 0)
-    t.pendown()
-    t.goto(k + k*i, n*k)
-
-t.mainloop()
-#t.exitonclick()
-
-'''
-
-
-import tkinter as tk    # является стандартной библиотекой
+import tkinter as tk            # является стандартной библиотекой
 from tkinter.ttk import Combobox
 from tkinter.messagebox import showerror, showwarning, showinfo
-
-
 
 def selected(event):
     selection = Combobox.get()
     if selection == "Dijkstra":
         algorithm_Dijkstra()
     elif selection == "A*":
-        algorithm_A()
+        algorithm_Astar()
+
+def alg_calc():
+    print(map_matrix)
 
 def algorithm_Dijkstra():
     return 0
 
-def algorithm_A():
+def algorithm_Astar():
     return 0
 
-def alg_build(h_str,  w_str):
-    # if ((type(h) is not int) or (type(w) is not int)):
-        # showwarning(title = "Предупреждение", message = "Введите целочисленные значения")
-    for widget in frame.winfo_children():
-        widget.destroy()
-    h = int(h_str)
-    w = int(w_str)
-    for i in range(h):
-        for j in range(w):
-            tk.Button(frame, height = 2, width = 4).grid(row = i + 1, column = j + 1, padx = 0, pady = 0)
+def alg_build(window, rows_str,  cols_str):
+    showinfo("Руководство", "Пожалуйста, оставь старт и финиш в единичных экземплярах")
+    reset_buttons()
+    global buttons
+    rows, cols = int(rows_str), int(cols_str)
+    global map_matrix
+    map_matrix = [[0 for _ in range(cols)] for _ in range(rows)]
+    for i in range(rows):
+        for j in range(cols):
+            btn = tk.Button(frame, text=f"", bg="white", height = 2, width = 2)
+            buttons.append(btn)
+            btn.grid(row = i + 1, column = j + 1)
+            btn.count = 0
+            btn.i, btn.j = i, j
+            btn.config(command = lambda button=btn: update_count(button, rows, cols))
 
-def alg_calc():
-    return 0
+def update_count(button, rows, cols):
+    button.count += 1
+    i, j = button.i, button.j
+    match button.count:
+        case 1:
+            button.config(bg="gray")
+        case 2:
+            button.config(bg="#4cd473")
+            button.config(text=f"Start")
+        case 3:
+            button.config(bg="#61c9cf")
+            button.config(text=f"Finish")
+        case 4:
+            button.config(bg="white", text=f"")
+            button.count = 0
+    # button.config(text=f"{button.count}")
+    map_matrix[i][j] = button.count
 
-def alg_reset():
+def reset():
+    global buttons
     height = width = 0
     height_ent.delete(0, len(height_ent.get()))
     width_ent.delete(0, len(width_ent.get()))
+    reset_buttons()
+    
+def reset_buttons():
+    global buttons
+    for button in buttons:
+        button.destroy()
+    buttons = []
 
 
-height = width = 0
+
 h = w = 0
+count_click = 0
+buttons = []
 
 window = tk.Tk()
 window.title('Кратчайший путь')
@@ -99,7 +94,7 @@ cb.set("Dijkstra")                              # значение по умол
 cb.bind("<<ComboboxSelected>>", selected)       # узнаем выбранное пользователем значение
 
 height_lbl = tk.Label(frame, text = "Высота поля:")
-height_lbl.grid(row = 2, column = 0, pady = (25, 5))
+height_lbl.grid(row = 2, column = 0, pady = (15, 5))
 height_ent = tk.Entry(frame)
 height_ent.grid(row = 3, column = 0)
 
@@ -108,17 +103,17 @@ width_lbl.grid(row = 4, column = 0, pady = (10, 5))
 width_ent = tk.Entry(frame)
 width_ent.grid(row = 5, column = 0)
 
-build_btn = tk.Button(frame, text = "Построить", height = 2, width = 10,
-                     command = lambda: alg_build(height_ent.get(), width_ent.get()))
-build_btn.grid(row = 6, column = 0, pady = (25, 0))
+build_btn = tk.Button(frame, text = "Построить", height = 1, width = 10,
+                     command = lambda: alg_build(window, height_ent.get(), width_ent.get()))
+build_btn.grid(row = 6, column = 0, pady = (5, 0))
 
-calc_btn = tk.Button(frame, text = "Запустить расчет", height = 2, width = 15,
+calc_btn = tk.Button(frame, text = "Запустить расчет", height = 1, width = 15,
                      command = lambda: alg_calc())
 calc_btn.grid(row = 7, column = 0, pady = (5, 0))
 
 reset_btn = tk.Button(frame, text = "Сбросить",
-                     command = lambda: alg_reset())
-reset_btn.grid(row = 8, column = 0, pady = (15, 0))
+                     command = lambda: reset())
+reset_btn.grid(row = 8, column = 0, pady = (5, 0))
 
 
 
