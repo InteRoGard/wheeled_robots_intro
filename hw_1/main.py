@@ -1,29 +1,32 @@
-import interface, algorithms
-from interface import alg_calc, map_matrix, adj_matrix, selection, rows, cols
-from algorithms import Graph
+import interface, graph
+from interface import Interface
+# from algorithms import Graph
 
+interface = Interface()
 
-print(map_matrix)
-start, finish = 0, 0
-for i in range(rows):
-    for j in range(cols):
-        num = ((i * cols) + j)
-        if map_matrix[i][j] == 2:
-            start = num
-            print(f'start {start}')
-        elif map_matrix[i][j] == 3:
-            finish = num
-            print(f'finish {finish}')
+'''
+# print(interface.map_matrix)
+# start, finish = 0, 0
+# for i in range(interface.rows):
+#     for j in range(interface.cols):
+#         num = ((i * interface.cols) + j)
+#         if interface.map_matrix[i][j] == 2:
+#             start = num
+#             print(f'start {start}')
+#         elif interface.map_matrix[i][j] == 3:
+#             finish = num
+#             print(f'finish {finish}')
 
-g = Graph(rows * cols)
-g.graph = adj_matrix
-src, fnsh, pred = g.Dijkstra(start, finish)
-way = g.printSolution(src, fnsh, pred)
-way = way[::-1]
-print('\nWay:', way)
+# g = Graph(interface.rows * interface.cols)
+# g.graph = interface.adj_matrix
+# src, fnsh, pred = g.Dijkstra(start, finish)
+# interface.way = g.printSolution(src, fnsh, pred)
+# interface.way = interface.way[::-1]
+# print('\nWay:', interface.way)
 
-alg_calc(way)
+# interface.alg_calc(interface.way)
 
+# interface.wait()
 # count = 0
 # i = 0
 # for btn in buttons:
@@ -31,3 +34,4 @@ alg_calc(way)
 #         btn.config(bg = 'green')
 #         count += 1
 #         i += 1
+'''
