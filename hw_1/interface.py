@@ -1,30 +1,46 @@
-import tkinter as tk            # является стандартной библиотекой
+import tkinter as tk                # является стандартной библиотекой
 from tkinter.ttk import Combobox
 from tkinter.messagebox import showerror, showwarning, showinfo
 
+
+
+
 def selected(event):
-    selection = Combobox.get()
-    if selection == "Dijkstra":
-        algorithm_Dijkstra()
-    elif selection == "A*":
-        algorithm_Astar()
+    global selection
+    selection = ''
+    selection = cb.get()
 
-def alg_calc():
-    print(map_matrix)
-
-def algorithm_Dijkstra():
-    return 0
-
-def algorithm_Astar():
-    return 0
+def alg_calc(way):
+    count = 0
+    i = 0
+    for btn in buttons:
+        if count in way:
+            btn.config(bg = "#ccffcc")
+            i += 1
+        count += 1
+    print('так вот он', way)
+    # print(adj_matrix)
 
 def alg_build(window, rows_str,  cols_str):
-    showinfo("Руководство", "Пожалуйста, оставь старт и финиш в единичных экземплярах")
+    # showinfo("Руководство", "Порядок:\nПрепятствия -> Start -> Finish\nИначе - Сбросить!" +
+            #  "\n\nПожалуйста, оставьте старт и финиш в единичных экземплярах")
     reset_buttons()
     global buttons
+    global rows, cols, vertices
     rows, cols = int(rows_str), int(cols_str)
-    global map_matrix
+    vertices = rows * cols
+    global map_matrix, adj_matrix
     map_matrix = [[0 for _ in range(cols)] for _ in range(rows)]
+    adj_matrix = [[0 for _ in range(vertices)] for _ in range(vertices)]
+
+    for k in range(vertices):
+        if (k % cols != (cols - 1)):    # сосед справа
+            adj_matrix[k][k + 1] = 1
+            adj_matrix[k + 1][k] = 1
+        if vertices - k > cols:         # сосед снизу
+            adj_matrix[k + cols][k] = 1
+            adj_matrix[k][k + cols] = 1
+
     for i in range(rows):
         for j in range(cols):
             btn = tk.Button(frame, text=f"", bg="white", height = 2, width = 2)
@@ -32,39 +48,58 @@ def alg_build(window, rows_str,  cols_str):
             btn.grid(row = i + 1, column = j + 1)
             btn.count = 0
             btn.i, btn.j = i, j
-            btn.config(command = lambda button=btn: update_count(button, rows, cols))
+            btn.config(command = lambda button = btn: update_count(button, rows, cols))
 
 def update_count(button, rows, cols):
-    button.count += 1
+    global start_point, finish_point
     i, j = button.i, button.j
+    num = ((i * cols) + j)
+    button.count += 1
+    x = 0
     match button.count:
         case 1:
             button.config(bg="gray")
+            x = 1
         case 2:
             button.config(bg="#4cd473")
             button.config(text=f"Start")
+            x = 0
         case 3:
             button.config(bg="#61c9cf")
             button.config(text=f"Finish")
+            x = 0
         case 4:
             button.config(bg="white", text=f"")
             button.count = 0
+            x = 0
     # button.config(text=f"{button.count}")
     map_matrix[i][j] = button.count
-
+    if x == 1:
+        for k in range(vertices):
+            adj_matrix[num][k] = 0
+            adj_matrix[k][num] = 0
+    else:
+        for k in range(vertices):
+            if (k % cols != (cols - 1)):    # сосед справа
+                adj_matrix[k][k + 1] = 1
+                adj_matrix[k + 1][k] = 1
+            if vertices - k > cols:         # сосед снизу
+                adj_matrix[k + cols][k] = 1
+                adj_matrix[k][k + cols] = 1
+            
+            
 def reset():
     global buttons
     height = width = 0
     height_ent.delete(0, len(height_ent.get()))
     width_ent.delete(0, len(width_ent.get()))
     reset_buttons()
-    
+
 def reset_buttons():
     global buttons
     for button in buttons:
         button.destroy()
     buttons = []
-
 
 
 h = w = 0
@@ -90,7 +125,7 @@ methods = ["Dijkstra", "A*"]
 cb = Combobox(frame, values = methods, width = 15, 
               state = "readonly", justify = 'center')
 cb.grid(row = 1, column = 0, pady = (5, 0))
-cb.set("Dijkstra")                              # значение по умолчанию
+cb.set("")                                      # пустое значение по умолчанию
 cb.bind("<<ComboboxSelected>>", selected)       # узнаем выбранное пользователем значение
 
 height_lbl = tk.Label(frame, text = "Высота поля:")
@@ -108,7 +143,7 @@ build_btn = tk.Button(frame, text = "Построить", height = 1, width = 10
 build_btn.grid(row = 6, column = 0, pady = (5, 0))
 
 calc_btn = tk.Button(frame, text = "Запустить расчет", height = 1, width = 15,
-                     command = lambda: alg_calc())
+                     command = lambda: alg_calc(way))
 calc_btn.grid(row = 7, column = 0, pady = (5, 0))
 
 reset_btn = tk.Button(frame, text = "Сбросить",
@@ -117,5 +152,4 @@ reset_btn.grid(row = 8, column = 0, pady = (5, 0))
 
 
 
-###     ###     ###
 window.mainloop()
