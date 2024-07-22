@@ -1,4 +1,5 @@
-
+# реализует граф, включает алгоритмы поиска и их вывод
+# 
 
 class Graph():
     def __init__(self, vertices):
@@ -7,7 +8,7 @@ class Graph():
                       for row in range(vertices)]
 
     def printSolution(self, src, fnsh, pred):
-        way = []
+        way = []        # сохраняет номера вершин кратчайшего пути
         node = fnsh
         print(node, end=' ')
         while node != src:
@@ -15,11 +16,9 @@ class Graph():
                 way.append(node)
             print(pred[node], end=' ')
             node = pred[node]
-            
-        # way = reversed(way)
         return way
 
-    def minshortestance(self, shortest, sptSet):
+    def minstance(self, shortest, sptSet):
         min = 1e7
         min_index = 0
         for v in range(self.V):
@@ -34,7 +33,7 @@ class Graph():
         pred = [0] * self.V
         sptSet = [False] * self.V
         for cout in range(self.V):
-            u = self.minshortestance(shortest, sptSet)
+            u = self.minstance(shortest, sptSet)
             sptSet[u] = True
             for v in range(self.V):
                 if (self.graph[u][v] > 0 and sptSet[v] == False and

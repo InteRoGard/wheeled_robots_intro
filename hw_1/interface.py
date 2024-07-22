@@ -28,7 +28,7 @@ class Interface:
         # frame = tk.Frame(master=window, relief=tk.SUNKEN, borderwidth=5)
 
         algorithm_lbl = tk.Label(frame, text = "Выберите алгоритм поиска пути")
-        algorithm_lbl.grid(row = 0, column = 0, pady = (20, 0))         # координаты считаются относительно наличия других элементов
+        algorithm_lbl.grid(row = 0, column = 0, pady = (20, 0))
         # algorithm_lbl.configure(text = "хзхзхз")    # изменяет виджет уже после добавления
 
         methods = ["Dijkstra", "A*"]
@@ -36,8 +36,8 @@ class Interface:
         cb = Combobox(frame, values = methods, width = 15, 
                     state = "readonly", justify = 'center')
         cb.grid(row = 1, column = 0, pady = (5, 0))
-        cb.set("")                                      # пустое значение по умолчанию
-        cb.bind("<<ComboboxSelected>>", self.selected(cb))       # узнаем выбранное пользователем значение
+        cb.set("")                                                  # пустое значение по умолчанию
+        cb.bind("<<ComboboxSelected>>", self.selected(cb))          # узнаем выбранное пользователем значение
 
         height_lbl = tk.Label(frame, text = "Высота поля:")
         height_lbl.grid(row = 2, column = 0, pady = (15, 5))
@@ -71,25 +71,25 @@ class Interface:
 
     def alg_calc(self):
         self.vertices = self.rows * self.cols
-        start, finish = 0, 0
-        for i in range(self.rows):
-            for j in range(self.cols):
+        start, finish = 0, 0                        # ошибка - игнорирует серые клетки
+        for i in range(self.rows):                  # баг в рассчетах появляется в циклах
+            for j in range(self.cols):              # на выходе изменения в матрице пропадают
                 num = ((i * self.cols) + j)
                 if self.map_matrix[i][j] == 2:
                     start = num
-                    print(f'start {start}')
+                    # print(f'start {start}')
                 elif self.map_matrix[i][j] == 3:
                     finish = num
-                    print(f'finish {finish}')
+                    # print(f'finish {finish}')
                 # elif self.map_matrix[i][j] == 1:
                     # g.remove(num)
                 elif self.map_matrix[i][j] == 1:
                     for k in range(self.vertices):
                         self.adj_matrix[num][k] = 0
-                        print(self.adj_matrix[num][k], num, k)
+                        # print(self.adj_matrix[num][k], num, k)
                         self.adj_matrix[k][num] = 0
-                    print(f'if выколотой точки сработал, num {num}')
-                    print(f'adj_matrxi: {self.adj_matrix}')
+                    # print(f'if выколотой точки сработал, num {num}')
+                    # print(f'adj_matrxi: {self.adj_matrix}')
                     # print(self.adj_matrix)
                 else:
                     for k in range(self.vertices):
@@ -99,15 +99,14 @@ class Interface:
                         if self.vertices - k > self.cols:         # сосед снизу
                             self.adj_matrix[k + self.cols][k] = 1
                             self.adj_matrix[k][k + self.cols] = 1
-        print(f'map_matrix: {self.map_matrix}')
+        # print(f'map_matrix: {self.map_matrix}')
         
         g = Graph(self.vertices)
         g.graph = self.adj_matrix
-        print(f'graph: {g.graph}')
+        # print(f'graph: {g.graph}')
         src, fnsh, pred = g.Dijkstra(start, finish)
         self.way = g.printSolution(src, fnsh, pred)
         self.way = self.way[::-1]
-
         count = 0
         i = 0
         for btn in self.buttons:
@@ -115,12 +114,12 @@ class Interface:
                 btn.config(bg = "#ccffcc")
                 i += 1
             count += 1
-        print('\nway внутри interface', self.way)
+        print('\nway', self.way)
         # print(adj_matrix)
 
     def alg_build(self, window, rows_str,  cols_str, frame):
-        # showinfo("Руководство", "Порядок:\nПрепятствия -> Start -> Finish\nИначе - Сбросить!" +
-                #  "\n\nПожалуйста, оставьте старт и финиш в единичных экземплярах")
+        showinfo("Руководство", "Порядок:\nПрепятствия -> Start -> Finish\nИначе - Сбросить!" +
+                 "\n\nПожалуйста, оставьте старт и финиш в единичных экземплярах")
         self.reset_buttons()
         # global buttons
         # global rows, cols, vertices
@@ -171,19 +170,6 @@ class Interface:
                 # x = 0
         # button.config(text=f"{button.count}")
         self.map_matrix[i][j] = button.count
-        # if button.count == 1:
-        #     for k in range(self.vertices):
-        #         self.adj_matrix[num][k] = 0
-        #         self.adj_matrix[k][num] = 0
-        #         # print(f'if выколотой точки сработал ')
-        # else:
-        #     for k in range(self.vertices):
-        #         if (k % cols != (cols - 1)):    # сосед справа
-        #             self.adj_matrix[k][k + 1] = 1
-        #             self.adj_matrix[k + 1][k] = 1
-        #         if self.vertices - k > cols:         # сосед снизу
-        #             self.adj_matrix[k + cols][k] = 1
-        #             self.adj_matrix[k][k + cols] = 1
 
     def reset(self, height_ent, width_ent):
         # global buttons
