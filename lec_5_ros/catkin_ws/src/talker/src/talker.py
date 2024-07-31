@@ -13,8 +13,22 @@ def talker():
         pub.publish(hello_str)
         rate.sleep()
 
+def main():
+    try:
+        talker()
+    except rospy.ROSInterruptException:
+        pass
+
+if __name__ == '__main__':
+    main()
+
+'''
+# old code below
+#       / better way - to make fun main as upper,..
+#       / cause of the global variables - we don't want to have them
 if __name__ == '__main__':
     try:
         talker()
     except rospy.ROSInterruptException:
         pass
+'''
