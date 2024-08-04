@@ -1,4 +1,4 @@
-#!/home/kirill/work/wheeled_robots_intro/hw_3/.venv/bin/python3
+#!/home/kirill/Robotics/wheeled_robots_intro/hw_3/.venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
