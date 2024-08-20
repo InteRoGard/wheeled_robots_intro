@@ -54,12 +54,13 @@
 ## Сроки домашних заданий
 
 | №         | Название              | Дедлайн               |
-|-----------|-----------------------|-----------------------|
-| `hw-0`    | test assignment       | 8.07 (Mon), 23:59     |
-| `hw-1`    | pure python           | 21.07 (Sun), 23:59    |
-| `hw-2`    | mujoco diff drive     | 28.07 (Sun), 23:59    |
-| `hw-3`    | ekf                   | 4.08 (Sun), 23:59     |
-| `hw-4`    | camera calib          | 11.08 (Sun), 23:59    |
-| `hw-5.1`  | project: lit review   | 11.08 (Sun), 23:59    |
-| `hw-5.2`  | project: implement    | 18.08 (Sun), 23:59    |
-| `hw-6`    | ros                   | 1.09 (Sun), 23:59     |
+|-----------|---------------------------|-----------------------|
+| `hw-0`    | test assignment           | 8.07 (Mon), 23:59     |
+| `hw-1`    | pure python               | 21.07 (Sun), 23:59    |
+| `hw-2`    | mujoco diff drive         | 28.07 (Sun), 23:59    |
+| `hw-3`    | ekf                       | 4.08 (Sun), 23:59     |
+| `hw-4`    | camera calib              | 11.08 (Sun), 23:59    |
+| `hw-5.1`  | project: lit review       | 11.08 (Sun), 23:59    |
+| `hw-5.2`  | project: implement        | 18.08 (Sun), 23:59    |
+| `hw-6`    | ros                       | 1.09 (Sun), 23:59     |
+| `hw-7`    | object detection (bonus)  | 15.09 (Sun), 23:59    |
