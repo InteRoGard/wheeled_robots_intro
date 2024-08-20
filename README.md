@@ -48,7 +48,7 @@
 | `4`       | camera calibration \| optimization    | 24.07 (Wed), 18:00    | [video](https://youtu.be/f7-pX7tOpj0), [slides](https://docs.google.com/presentation/d/1kR5cs6kO3cLQ04F0g3_MgHIME2nAgP-ZBN5HD5Li6sY/edit?usp=sharing) |
 | `5`       | ros                                   | 31.07 (Wed), 18:00    | [video](https://youtu.be/vNQ4BmZ8i2A), [slides](https://docs.google.com/presentation/d/1J6z0YwZLZ6tP3hlSLxahimO6u87USpjpj3sww8npURI/edit?usp=sharing) |
 | `6`       | image matching \| ros hw              | 15.08 (Thu), 18:00    | [video](https://youtu.be/kJZhoKyZKXc), [slides](https://docs.google.com/presentation/d/1HMJriC0P0z4X6cv4FhvB8cy9i8T5R4cI6GvnOcKM1Hc/edit?usp=sharing) |
-| `7`       |                   | 21.08 (Wed), 18:00    |           |
+| `7`       |                   | 22.08 (Thu), 18:00    |           |
 | `8`       |                   | 28.08 (Wed), 18:00    |           |
 
 ## Сроки домашних заданий
