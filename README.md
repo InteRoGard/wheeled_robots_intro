@@ -41,14 +41,14 @@
 ## Расписание занятий
 
 | №         | Тема                              | Дата                  | Материалы |
-|-----------|---------------------------------------|-----------------------|-----------|
-| `1`       | linux, git \| python classes          | 7.07 (Sun), 18:00     | [video](https://youtu.be/gpUaZDVf8Ms), [slides](https://docs.google.com/presentation/d/1bFtvqoGm9mmw2em5YF0iMlQTd0qG3hPaZahPpMy67Y0/edit?usp=sharing) |
-| `2`       | venv, pip, docker \| numpy            | 10.07 (Wed), 18:00    | [video](https://youtu.be/h6uJPCfl3W0), [slides](https://docs.google.com/presentation/d/1K1_GDXQQU-d5Oyx6nJNo5DSLzRZGxVDfatIxMsNJnkQ/edit?usp=sharing) |
-| `3`       | robotics algorithms \| ekf            | 17.07 (Wed), 18:00    | [video](https://youtu.be/kOqmsgt9zi0), [slides](https://docs.google.com/presentation/d/1d4qIVaG8D9hKw8Xe37uqkCHtaMiPrJuvaDfccJkUkPI/edit?usp=sharing) |
-| `4`       | camera calibration \| optimization    | 24.07 (Wed), 18:00    | [video](https://youtu.be/f7-pX7tOpj0), [slides](https://docs.google.com/presentation/d/1kR5cs6kO3cLQ04F0g3_MgHIME2nAgP-ZBN5HD5Li6sY/edit?usp=sharing) |
-| `5`       | ros                                   | 31.07 (Wed), 18:00    | [video](https://youtu.be/vNQ4BmZ8i2A), [slides](https://docs.google.com/presentation/d/1J6z0YwZLZ6tP3hlSLxahimO6u87USpjpj3sww8npURI/edit?usp=sharing) |
-| `6`       | image matching \| ros hw              | 15.08 (Thu), 18:00    | [video](https://youtu.be/kJZhoKyZKXc), [slides](https://docs.google.com/presentation/d/1HMJriC0P0z4X6cv4FhvB8cy9i8T5R4cI6GvnOcKM1Hc/edit?usp=sharing) |
-| `7`       |                   | 22.08 (Thu), 18:00    |           |
+|-----------|---------------------------------------------------------------|-----------------------|-----------|
+| `1`       | linux, git \| python classes                                  | 7.07 (Sun), 18:00     | [video](https://youtu.be/gpUaZDVf8Ms), [slides](https://docs.google.com/presentation/d/1bFtvqoGm9mmw2em5YF0iMlQTd0qG3hPaZahPpMy67Y0/edit?usp=sharing) |
+| `2`       | venv, pip, docker \| numpy                                    | 10.07 (Wed), 18:00    | [video](https://youtu.be/h6uJPCfl3W0), [slides](https://docs.google.com/presentation/d/1K1_GDXQQU-d5Oyx6nJNo5DSLzRZGxVDfatIxMsNJnkQ/edit?usp=sharing) |
+| `3`       | robotics algorithms \| ekf                                    | 17.07 (Wed), 18:00    | [video](https://youtu.be/kOqmsgt9zi0), [slides](https://docs.google.com/presentation/d/1d4qIVaG8D9hKw8Xe37uqkCHtaMiPrJuvaDfccJkUkPI/edit?usp=sharing) |
+| `4`       | camera calibration \| optimization                            | 24.07 (Wed), 18:00    | [video](https://youtu.be/f7-pX7tOpj0), [slides](https://docs.google.com/presentation/d/1kR5cs6kO3cLQ04F0g3_MgHIME2nAgP-ZBN5HD5Li6sY/edit?usp=sharing) |
+| `5`       | ros                                                           | 31.07 (Wed), 18:00    | [video](https://youtu.be/vNQ4BmZ8i2A), [slides](https://docs.google.com/presentation/d/1J6z0YwZLZ6tP3hlSLxahimO6u87USpjpj3sww8npURI/edit?usp=sharing) |
+| `6`       | image matching \| ros hw                                      | 15.08 (Thu), 18:00    | [video](https://youtu.be/kJZhoKyZKXc), [slides](https://docs.google.com/presentation/d/1HMJriC0P0z4X6cv4FhvB8cy9i8T5R4cI6GvnOcKM1Hc/edit?usp=sharing) |
+| `7`       | probability theory, kalman filter \| ml intro, pointclouds    | 22.08 (Thu), 18:00    | [video](https://youtu.be/tbqb4AUs2Uk), [slides](https://docs.google.com/presentation/d/18e3OX8QVhtqoAYnaNG9zeqE_gq4s7Zpgc9IyKskFH3Q/edit?usp=sharing) |
 | `8`       |                   | 28.08 (Wed), 18:00    |           |
 
 ## Сроки домашних заданий
