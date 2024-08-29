@@ -49,7 +49,7 @@
 | `5`       | ros                                                           | 31.07 (Wed), 18:00    | [video](https://youtu.be/vNQ4BmZ8i2A), [slides](https://docs.google.com/presentation/d/1J6z0YwZLZ6tP3hlSLxahimO6u87USpjpj3sww8npURI/edit?usp=sharing) |
 | `6`       | image matching \| ros hw                                      | 15.08 (Thu), 18:00    | [video](https://youtu.be/kJZhoKyZKXc), [slides](https://docs.google.com/presentation/d/1HMJriC0P0z4X6cv4FhvB8cy9i8T5R4cI6GvnOcKM1Hc/edit?usp=sharing) |
 | `7`       | probability theory, kalman filter \| ml intro, pointclouds    | 22.08 (Thu), 18:00    | [video](https://youtu.be/tbqb4AUs2Uk), [slides](https://docs.google.com/presentation/d/18e3OX8QVhtqoAYnaNG9zeqE_gq4s7Zpgc9IyKskFH3Q/edit?usp=sharing) |
-| `8`       |                   | 28.08 (Wed), 18:00    |           |
+| `8`       | NN intro \| ROS Nav                                           | 28.08 (Wed), 18:00    | [video](https://youtu.be/oC8k8dlyGqo), [slides](https://docs.google.com/presentation/d/1D_ChRf6v-SzcIR7B9GdEIFzaGgmcqpv_EZ9O6PyQ5-Y/edit?usp=sharing) |
 
 ## Сроки домашних заданий
 
