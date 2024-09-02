@@ -23,9 +23,9 @@
 
 ### Критерии оценки
 Оценка определяется набранной суммой баллов за домашние задания. Критерии оценивания (в процентах, максимум 100):
-* Отлично: 90+
-* Хорошо: 75 - 90
-* Удовлетворительно: 60 - 75
+* Отлично: 85+
+* Хорошо: 70 - 85
+* Удовлетворительно: 50 - 70
 
 (нижняя граница включается, верхняя — не включается)
 
@@ -41,25 +41,26 @@
 ## Расписание занятий
 
 | №         | Тема                              | Дата                  | Материалы |
-|-----------|---------------------------------------|-----------------------|-----------|
-| `1`       | linux, git \| python classes          | 7.07 (Sun), 18:00     | [video](https://youtu.be/gpUaZDVf8Ms), [slides](https://docs.google.com/presentation/d/1bFtvqoGm9mmw2em5YF0iMlQTd0qG3hPaZahPpMy67Y0/edit?usp=sharing) |
-| `2`       | venv, pip, docker \| numpy            | 10.07 (Wed), 18:00    | [video](https://youtu.be/h6uJPCfl3W0), [slides](https://docs.google.com/presentation/d/1K1_GDXQQU-d5Oyx6nJNo5DSLzRZGxVDfatIxMsNJnkQ/edit?usp=sharing) |
-| `3`       | robotics algorithms \| ekf            | 17.07 (Wed), 18:00    | [video](https://youtu.be/kOqmsgt9zi0), [slides](https://docs.google.com/presentation/d/1d4qIVaG8D9hKw8Xe37uqkCHtaMiPrJuvaDfccJkUkPI/edit?usp=sharing) |
-| `4`       | camera calibration \| optimization    | 24.07 (Wed), 18:00    | [video](https://youtu.be/f7-pX7tOpj0), [slides](https://docs.google.com/presentation/d/1kR5cs6kO3cLQ04F0g3_MgHIME2nAgP-ZBN5HD5Li6sY/edit?usp=sharing) |
-| `5`       | ros                 | 31.07 (Wed), 18:00    | [video](https://youtu.be/vNQ4BmZ8i2A), [slides](https://docs.google.com/presentation/d/1J6z0YwZLZ6tP3hlSLxahimO6u87USpjpj3sww8npURI/edit?usp=sharing) |
-| `6`       |                   | ???  (7.08, Wed)      |           |
-| `7`       |                   | 14.08 (Wed), 18:00    |           |
-| `8`       |                   | ???                   |           |
-| `9`       |                   | ???                   |           |
+|-----------|---------------------------------------------------------------|-----------------------|-----------|
+| `1`       | linux, git \| python classes                                  | 7.07 (Sun), 18:00     | [video](https://youtu.be/gpUaZDVf8Ms), [slides](https://docs.google.com/presentation/d/1bFtvqoGm9mmw2em5YF0iMlQTd0qG3hPaZahPpMy67Y0/edit?usp=sharing) |
+| `2`       | venv, pip, docker \| numpy                                    | 10.07 (Wed), 18:00    | [video](https://youtu.be/h6uJPCfl3W0), [slides](https://docs.google.com/presentation/d/1K1_GDXQQU-d5Oyx6nJNo5DSLzRZGxVDfatIxMsNJnkQ/edit?usp=sharing) |
+| `3`       | robotics algorithms \| ekf                                    | 17.07 (Wed), 18:00    | [video](https://youtu.be/kOqmsgt9zi0), [slides](https://docs.google.com/presentation/d/1d4qIVaG8D9hKw8Xe37uqkCHtaMiPrJuvaDfccJkUkPI/edit?usp=sharing) |
+| `4`       | camera calibration \| optimization                            | 24.07 (Wed), 18:00    | [video](https://youtu.be/f7-pX7tOpj0), [slides](https://docs.google.com/presentation/d/1kR5cs6kO3cLQ04F0g3_MgHIME2nAgP-ZBN5HD5Li6sY/edit?usp=sharing) |
+| `5`       | ros                                                           | 31.07 (Wed), 18:00    | [video](https://youtu.be/vNQ4BmZ8i2A), [slides](https://docs.google.com/presentation/d/1J6z0YwZLZ6tP3hlSLxahimO6u87USpjpj3sww8npURI/edit?usp=sharing) |
+| `6`       | image matching \| ros hw                                      | 15.08 (Thu), 18:00    | [video](https://youtu.be/kJZhoKyZKXc), [slides](https://docs.google.com/presentation/d/1HMJriC0P0z4X6cv4FhvB8cy9i8T5R4cI6GvnOcKM1Hc/edit?usp=sharing) |
+| `7`       | probability theory, kalman filter \| ml intro, pointclouds    | 22.08 (Thu), 18:00    | [video](https://youtu.be/tbqb4AUs2Uk), [slides](https://docs.google.com/presentation/d/18e3OX8QVhtqoAYnaNG9zeqE_gq4s7Zpgc9IyKskFH3Q/edit?usp=sharing) |
+| `8`       | NN intro \| ROS Nav                                           | 28.08 (Wed), 18:00    | [video](https://youtu.be/oC8k8dlyGqo), [slides](https://docs.google.com/presentation/d/1D_ChRf6v-SzcIR7B9GdEIFzaGgmcqpv_EZ9O6PyQ5-Y/edit?usp=sharing) |
 
 ## Сроки домашних заданий
 
 | №         | Название              | Дедлайн               |
-|-----------|-----------------------|-----------------------|
-| `hw-0`    | test assignment       | 8.07 (Mon), 23:59     |
-| `hw-1`    | pure python           | 21.07 (Sun), 23:59    |
-| `hw-2`    | mujoco diff drive     | 28.07 (Sun), 23:59    |
-| `hw-3`    | ekf                   | 4.08 (Sun), 23:59     |
-| `hw-4`    | camera calib          | 11.08 (Sun), 23:59    |
-| `hw-5.1`  | project: lit review   | 11.08 (Sun), 23:59    |
-| `hw-5.2`  | project: implement    | 18.08 (Sun), 23:59    |
+|-----------|---------------------------|-----------------------|
+| `hw-0`    | test assignment           | 8.07 (Mon), 23:59     |
+| `hw-1`    | pure python               | 21.07 (Sun), 23:59    |
+| `hw-2`    | mujoco diff drive         | 28.07 (Sun), 23:59    |
+| `hw-3`    | ekf                       | 4.08 (Sun), 23:59     |
+| `hw-4`    | camera calib              | 11.08 (Sun), 23:59    |
+| `hw-5.1`  | project: lit review       | 11.08 (Sun), 23:59    |
+| `hw-5.2`  | project: implement        | 18.08 (Sun), 23:59    |
+| `hw-6`    | ros                       | 1.09 (Sun), 23:59     |
+| `hw-7`    | object detection (bonus)  | 15.09 (Sun), 23:59    |
