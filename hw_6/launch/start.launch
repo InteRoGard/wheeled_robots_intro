@@ -1,5 +1,10 @@
 <launch> 
     <!-- Start Nodes -->
-    <node name="example_node" pkg="solution_bachelor" type="example.py" output="screen" />
-    <!-- <node name="example_node" pkg="solution_bachelor" type="example_node" output="screen" /> -->
+    <!-- <node name="example_node" pkg="solution_bachelor" type="example.py" output="screen" /> -->
+
+    <!-- My Nodes -->
+    <node name="robot_node" pkg="solution_bachelor" type="robot.py" output="screen" />
+    <node name="map_node" pkg="solution_bachelor" type="map.py" output="screen"/>
+    
+
 </launch>
